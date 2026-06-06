@@ -101,9 +101,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser_v2.mp4" type="video/mp4">
-      </video>
+      <img id="teaser" src="./static/images/teaser.png" alt="Teaser image">
       <h2 class="subtitle has-text-centered">
         A unified generative model performs point tracking on observed frames and
         trajectory forecasting on unobserved future frames through video-conditioned point generation.
@@ -136,22 +134,145 @@
 </section>
 
 
-<section class="section" style="padding-bottom: 0px;">
+<section class="section" id="davis-demo">
   <div class="container is-max-desktop">
-
     <div class="columns is-centered">
-
-      <!-- Overview. -->
       <div class="column is-full-width">
         <div class="content">
-          <h2 class="title is-3">Unified Point Tracking and Forecasting</h2>
+          <h2 class="title is-3">Qualitative Demo on DAVIS</h2>
           <div class="has-text-justified">
             <p>
-              We address point tracking and motion forecasting with a single generative point model. The model predicts trajectories
-              conditioned on an input video sequence, aligning points to observed frames when visual evidence is available and naturally
-              transitioning to forecasting when future frames are withheld. This unified formulation handles pure tracking, pure
-              forecasting, and mixed observed-to-unobserved sequences within the same architecture, letting one model cover the full
-              range from present motion estimation to future trajectory prediction.
+              Placeholder text for the DAVIS demo description. Replace this sentence with the final project-page copy.
+            </p>
+          </div>
+          <div class="demo-grid two-up">
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on DAVIS video 0">
+                <source src="./static/videos/davis/davis0.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on DAVIS video 1">
+                <source src="./static/videos/davis/davis1.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on DAVIS video 2">
+                <source src="./static/videos/davis/davis2.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on DAVIS video 3">
+                <source src="./static/videos/davis/davis3.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on DAVIS video 4">
+                <source src="./static/videos/davis/davis4.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on DAVIS video 5">
+                <source src="./static/videos/davis/davis5.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on DAVIS video 6">
+                <source src="./static/videos/davis/davis6.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on DAVIS video 7">
+                <source src="./static/videos/davis/davis7.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="drivetrack-demo">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Qualitative Demo on DriveTrack</h2>
+          <div class="demo-grid one-up">
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on DriveTrack video 0">
+                <source src="./static/videos/drive/drive0.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on DriveTrack video 1">
+                <source src="./static/videos/drive/drive1.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on DriveTrack video 2">
+                <source src="./static/videos/drive/drive2.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on DriveTrack video 3">
+                <source src="./static/videos/drive/drive3.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="physics-demo">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Qualitative Demo on Physics101</h2>
+          <div class="demo-grid two-up">
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on Physics101 video 0">
+                <source src="./static/videos/physics/physics0.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on Physics101 video 1">
+                <source src="./static/videos/physics/physics1.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on Physics101 video 2">
+                <source src="./static/videos/physics/physics2.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Qualitative Demo on Physics101 video 3">
+                <source src="./static/videos/physics/physics3.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="method">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Method</h2>
+          <div class="method-figure">
+            <img src="./static/images/method.png" alt="Method overview">
+          </div>
+          <div class="has-text-justified">
+            <p>
+              We propose a single generative model that performs both forecasting and tracking using a diffusion transformer, operating with image conditioning for tracking and without image conditioning for forecasting. Noise is added to the point locations across time, and the model is trained to denoise these trajectories. Each diffusion block contains three types of attention: temporal attention, applied across the same point over time; spatial attention, applied among all points within the same frame; and cross attention, applied between point location tokens and image feature tokens.
             </p>
           </div>
         </div>
@@ -160,188 +281,32 @@
   </div>
 </section>
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-1">
-          <img id="1" src="./static/images/dataset1.png">
-        </div>
-        <div class="item item-2">
-          <img id="2" src="./static/images/dataset2.png">
-        </div>
-        <div class="item item-3">
-          <img id="3" src="./static/images/dataset3.png">
-        </div>
-        <div class="item item-4">
-          <img id="4" src="./static/images/dataset4.png">
-        </div>
-        <div class="item item-5">
-          <img id="5" src="./static/images/dataset5.png">
-        </div>
-        <div class="item item-6">
-          <img id="6" src="./static/images/dataset6.png">
-        </div>
-        <div class="item item-7">
-          <img id="7" src="./static/images/dataset7.png">
-        </div>
-        <div class="item item-8">
-          <img id="8" src="./static/images/dataset8.png">
-        </div>
-        <div class="item item-9">
-          <img id="9" src="./static/images/dataset9.png">
-        </div>
-        <div class="item item-10">
-          <img id="10" src="./static/images/dataset10.png">
-        </div>
-        <div class="item item-11">
-          <img id="11" src="./static/images/dataset11.png">
-        </div>
-        <div class="item item-12">
-          <img id="12" src="./static/images/dataset12.png">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
+<section class="section" id="failure-demo">
   <div class="container is-max-desktop">
-
     <div class="columns is-centered">
-
-      <!-- Method. -->
       <div class="column is-full-width">
         <div class="content">
-          <h2 class="title is-3">Method Overview</h2>
-          <div class="content">
-            <img src="./static/images/diagram_srgb.png">
-          </div>
+          <h2 class="title is-3">Failure Cases</h2>
           <div class="has-text-justified">
             <p>
-              Our model is a causal, video-conditioned flow matching model that operates directly in point space. For each video frame
-              and query point, it forms tokens for position and visibility, then uses a diffusion transformer to denoise trajectories
-              over a temporal sliding window. The architecture combines temporal attention over a point's motion history, spatial
-              attention among points within a frame, and cross attention to image features. By simply removing visual conditioning for
-              unobserved frames, the same model switches from conditional generation for tracking to unconditional generation for
-              forecasting without changing the architecture.
+              Placeholder text for the failure-case description. Replace this sentence with the final project-page copy.
             </p>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-    <!-- Results. -->
-      <div class="column is-full-width">
-        <div class="content">
-          <h2 class="title is-3">Qualitative Results</h2>
-          <div>
-            <div class="has-text-justified">
-              <p>
-                We show representative qualitative results from a single model that performs both point tracking and forecasting.
-                When video frames are observed, the model tracks points using visual evidence; when future frames are withheld, it
-                continues the same trajectories by sampling plausible future motion. These examples highlight coherent point dynamics
-                across diverse scenes and motion patterns within one unified generative formulation.
-              </p>
+          <div class="demo-grid three-up">
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Failure Cases video 0">
+                <source src="./static/videos/failure/failure0.mp4" type="video/mp4">
+              </video>
             </div>
-            <div class="row" style="margin-left: -10px; margin-right: -10px;">
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result1.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result2.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result3.png">
-              </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Failure Cases video 1">
+                <source src="./static/videos/failure/failure1.mp4" type="video/mp4">
+              </video>
             </div>
-            <div class="row" style="margin-left: -10px; margin-right: -10px;">
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result4.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result5.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result6.png">
-              </div>
-            </div>
-            <div class="row" style="margin-left: -10px; margin-right: -10px;">
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result7.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result8.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result9.png">
-              </div>
-            </div>
-            <div class="row" style="margin-left: -10px; margin-right: -10px;">
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result10.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result11.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result12.png">
-              </div>
-            </div>
-            <div class="row" style="margin-left: -10px; margin-right: -10px;">
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result13.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result14.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result15.png">
-              </div>
-            </div>
-            <div class="row" style="margin-left: -10px; margin-right: -10px;">
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result16.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result17.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result18.png">
-              </div>
-            </div>
-            <div class="row content" style="margin-left: -10px; margin-right: -10px;">
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result19.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result20.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/result21.png">
-              </div>
-            </div>
-            <div class="has-text-justified">
-              <p>
-                We also include a few failure cases that highlight where unified tracking and forecasting remain challenging,
-                especially when future motion is ambiguous or visual evidence becomes weak.
-              </p>
-            </div>
-            <div class="row" style="margin-left: -10px; margin-right: -10px;">
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/failure1.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/failure2.png">
-              </div>
-              <div class="col-4" style="padding:5px">
-                <img src="./static/images/failure3.png">
-              </div>
+            <div class="demo-card">
+              <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Failure Cases video 2">
+                <source src="./static/videos/failure/failure2.mp4" type="video/mp4">
+              </video>
             </div>
           </div>
         </div>
@@ -349,7 +314,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- BibTeX section intentionally hidden for now. -->
 
