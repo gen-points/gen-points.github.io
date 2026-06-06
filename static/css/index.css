@@ -177,8 +177,38 @@ body {
 
 .demo-card {
   overflow: hidden;
-  border-radius: 10px;
-  background: #000;
+  border-radius: 0;
+  background: transparent;
+}
+
+.demo-labels {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.demo-labels.cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.demo-labels.cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.demo-labels.cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.demo-label {
+  color: #555;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.demo-label.span-3 {
+  grid-column: span 3;
 }
 
 .demo-video {
@@ -202,5 +232,13 @@ body {
   .demo-grid.two-up,
   .demo-grid.three-up {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .demo-labels {
+    gap: 0.5rem;
+  }
+
+  .demo-label {
+    font-size: 0.75rem;
   }
 }
