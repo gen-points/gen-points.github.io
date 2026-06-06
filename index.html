@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="A unified generative model for point tracking and forecasting
+        using causal, video-conditioned flow matching.">
+  <!-- <meta name="keywords" content="point tracking, motion forecasting"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generative Point Tracking and Forecasting</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JH8GVMR02"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-1JH8GVMR02');
+  </script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Generative Point Tracking and Forecasting</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Xuanchen Lu<sup>1,2</sup>,</span>
+            <span class="author-block">
+              Ang Cao<sup>2</sup>,</span>
+            <span class="author-block">
+              Chao Feng<sup>1,2</sup>,</span>
+            <span class="author-block">
+              Andrew Owens<sup>1,2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Cornell University,</span>
+            <span class="author-block"><sup>2</sup>University of Michigan</span>
+          </div>
+          <div class="is-size-5 publication-venue" style="margin: 0 auto;">CVPR 2026</div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="./static/Generative_Point_Tracking_and_Forecasting_website_verision.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>PDF</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#"
+                   onclick="return false;"
+                   aria-disabled="true"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser_v2.mp4" type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        A unified generative model performs point tracking on observed frames and
+        trajectory forecasting on unobserved future frames through video-conditioned point generation.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Motion forecasting predicts where points will move in the future, while motion tracking predicts where they are in the
+            present. Despite these similarities, existing approaches to the two problems are quite different. In this paper, we propose
+            a unified model that can address both tasks. We train a causal, video-conditioned flow matching model to predict point
+            positions. The resulting model can easily toggle between point tracking and forecasting by changing its visual signal.
+            Despite our model's simplicity, we find that it outperforms prior work in point forecasting and obtains performance that
+            is competitive with the state-of-the-art on the TAP-Vid benchmark.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+</section>
+
+
+<section class="section" style="padding-bottom: 0px;">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Overview. -->
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Unified Point Tracking and Forecasting</h2>
+          <div class="has-text-justified">
+            <p>
+              We address point tracking and motion forecasting with a single generative point model. The model predicts trajectories
+              conditioned on an input video sequence, aligning points to observed frames when visual evidence is available and naturally
+              transitioning to forecasting when future frames are withheld. This unified formulation handles pure tracking, pure
+              forecasting, and mixed observed-to-unobserved sequences within the same architecture, letting one model cover the full
+              range from present motion estimation to future trajectory prediction.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-1">
+          <img id="1" src="./static/images/dataset1.png">
+        </div>
+        <div class="item item-2">
+          <img id="2" src="./static/images/dataset2.png">
+        </div>
+        <div class="item item-3">
+          <img id="3" src="./static/images/dataset3.png">
+        </div>
+        <div class="item item-4">
+          <img id="4" src="./static/images/dataset4.png">
+        </div>
+        <div class="item item-5">
+          <img id="5" src="./static/images/dataset5.png">
+        </div>
+        <div class="item item-6">
+          <img id="6" src="./static/images/dataset6.png">
+        </div>
+        <div class="item item-7">
+          <img id="7" src="./static/images/dataset7.png">
+        </div>
+        <div class="item item-8">
+          <img id="8" src="./static/images/dataset8.png">
+        </div>
+        <div class="item item-9">
+          <img id="9" src="./static/images/dataset9.png">
+        </div>
+        <div class="item item-10">
+          <img id="10" src="./static/images/dataset10.png">
+        </div>
+        <div class="item item-11">
+          <img id="11" src="./static/images/dataset11.png">
+        </div>
+        <div class="item item-12">
+          <img id="12" src="./static/images/dataset12.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Method. -->
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Method Overview</h2>
+          <div class="content">
+            <img src="./static/images/diagram_srgb.png">
+          </div>
+          <div class="has-text-justified">
+            <p>
+              Our model is a causal, video-conditioned flow matching model that operates directly in point space. For each video frame
+              and query point, it forms tokens for position and visibility, then uses a diffusion transformer to denoise trajectories
+              over a temporal sliding window. The architecture combines temporal attention over a point's motion history, spatial
+              attention among points within a frame, and cross attention to image features. By simply removing visual conditioning for
+              unobserved frames, the same model switches from conditional generation for tracking to unconditional generation for
+              forecasting without changing the architecture.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+    <!-- Results. -->
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Qualitative Results</h2>
+          <div>
+            <div class="has-text-justified">
+              <p>
+                We show representative qualitative results from a single model that performs both point tracking and forecasting.
+                When video frames are observed, the model tracks points using visual evidence; when future frames are withheld, it
+                continues the same trajectories by sampling plausible future motion. These examples highlight coherent point dynamics
+                across diverse scenes and motion patterns within one unified generative formulation.
+              </p>
+            </div>
+            <div class="row" style="margin-left: -10px; margin-right: -10px;">
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result1.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result2.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result3.png">
+              </div>
+            </div>
+            <div class="row" style="margin-left: -10px; margin-right: -10px;">
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result4.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result5.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result6.png">
+              </div>
+            </div>
+            <div class="row" style="margin-left: -10px; margin-right: -10px;">
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result7.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result8.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result9.png">
+              </div>
+            </div>
+            <div class="row" style="margin-left: -10px; margin-right: -10px;">
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result10.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result11.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result12.png">
+              </div>
+            </div>
+            <div class="row" style="margin-left: -10px; margin-right: -10px;">
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result13.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result14.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result15.png">
+              </div>
+            </div>
+            <div class="row" style="margin-left: -10px; margin-right: -10px;">
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result16.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result17.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result18.png">
+              </div>
+            </div>
+            <div class="row content" style="margin-left: -10px; margin-right: -10px;">
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result19.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result20.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/result21.png">
+              </div>
+            </div>
+            <div class="has-text-justified">
+              <p>
+                We also include a few failure cases that highlight where unified tracking and forecasting remain challenging,
+                especially when future motion is ambiguous or visual evidence becomes weak.
+              </p>
+            </div>
+            <div class="row" style="margin-left: -10px; margin-right: -10px;">
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/failure1.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/failure2.png">
+              </div>
+              <div class="col-4" style="padding:5px">
+                <img src="./static/images/failure3.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BibTeX section intentionally hidden for now. -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/Generative_Point_Tracking_and_Forecasting_website_verision.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="#" onclick="return false;" aria-disabled="true">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align:center;">
+            Thanks to <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> for the website template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
