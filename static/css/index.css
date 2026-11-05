@@ -217,6 +217,12 @@ body {
   height: auto;
 }
 
+/* Reserve each video's box before it loads (videos load lazily), so the page doesn't jump. */
+#davis-demo .demo-video { aspect-ratio: 1942 / 508; }
+#drivetrack-demo .demo-video { aspect-ratio: 2420 / 508; }
+#physics-demo .demo-video,
+#failure-demo .demo-video { aspect-ratio: 1464 / 508; }
+
 .method-figure {
   margin-top: 1rem;
 }
